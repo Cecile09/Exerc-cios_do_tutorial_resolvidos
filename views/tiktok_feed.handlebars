@@ -1,0 +1,35 @@
+<div style="max-width: 500px; margin: 0 auto; font-family: Arial, sans-serif;">
+    <h1 style="color: #FE2C55; text-align: center;">TikTok Acadêmico 🎬</h1>
+
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <fieldset style="border: 2px solid #FE2C55; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+        <legend><b>Postar Novo Vídeo</b></legend>
+        <form action="/TikTok/novo" method="POST">
+            <p>
+                <label>Usuário:</label><br>
+                <input type="text" name="usuário" placeholder="@seu_perfil" required style="width: 100%; padding: 8px;">
+            </p>
+            <p>
+                <label>Título/Legenda do Vídeo:</label><br>
+                <input type="text" name="titulo" placeholder="O que está acontecendo?" required style="width: 100%; padding: 8px;">
+            </p>
+            <p>
+                <label>Link da Imagem/Capa do Vídeo:</label><br>
+                <input type="url" name="url" placeholder="https://exemplo.com" required style="width: 100%; padding: 8px;">
+            </p>
+            <button type="submit" style="background-color: #FE2C55; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: bold;">
+                Publicar Vídeo
+            </button>
+        </form>
+    </fieldset>
+
+    <!-- FEED DE VÍDEOS -->
+    <h2>Feed Recente</h2>
+    {{#each videos}}
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 15px; margin-bottom: 15px; background-color: #f9f9f9;">
+            <h3 style="margin: 0 0 5px 0; color: #333;">{{this.usuário}}</h3>
+            <p style="margin: 0 0 10px 0;">{{this.titulo}}</p>
+            <img src="{{this.url}}" alt="Capa do vídeo" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 4px;">
+        </div>
+    {{/each}}
+</div>

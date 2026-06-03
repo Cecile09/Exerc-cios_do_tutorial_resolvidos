@@ -1,0 +1,17 @@
+<h1>Catálogo de Filmes</h1>
+<table border="1" cellpadding="8" style="border-collapse: collapse; text-align: left;">
+    <thead>
+        <tr>
+            <th>Nome do Filme</th>
+            <th>Ano de Lançamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each catalogo}}
+            <tr>
+                <td>{{this.nome}}</td>
+                <td>{{this.ano}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

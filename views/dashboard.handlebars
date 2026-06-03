@@ -1,0 +1,12 @@
+<h1>Painel de Controle</h1>
+
+    <p>Bem-vindo de volta! Seu sistema está pronto. </p>
+{{else}}
+    <p>Por favor, faça login para acessar o sistema. </p>
+{{/if}}
+
+<hr>
+
+{{#unless eAdministrador}}
+    <p style="color: red;">Atenção: Você tem permissões de usuário comum. </p>
+{{/unless}}
